@@ -1,0 +1,11 @@
+.delete-button {
+    font-size: 26px;
+    position: absolute;
+    right: 8px;
+    top: 3px;
+    padding: 0;
+}
+
+.delete-button span {
+    color: #007bff;
+}

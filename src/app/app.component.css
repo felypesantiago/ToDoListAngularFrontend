@@ -1,0 +1,11 @@
+.add-button {
+    font-size: 26px;
+    position: absolute;
+    right: 15px;
+    top: 8px;
+    padding: 0;
+}
+
+.add-button span {
+    color: #007bff;
+}

@@ -1,0 +1,14 @@
+<nav class='navbar navbar-expand navbar-light bg-light'>
+  <a class='navbar-brand'>To Do List</a>
+  <ul class='nav nav-pills'>
+    <li><a class="nav-link" routerLinkActive='active' [routerLink]="['/todolist']">Items</a></li>
+    <li><a class="nav-link" routerLinkActive='active' [routerLink]="['/credits']">Credits</a></li>
+  </ul>
+  <button type="button" class="add-button btn btn-default" aria-label="Add item" routerLinkActive='active'
+    [routerLink]="['/items/0/edit']">
+    <span class="icon fa fa-plus" aria-hidden="true"></span>
+  </button>
+</nav>
+<div class='container'>
+  <router-outlet></router-outlet>
+</div>

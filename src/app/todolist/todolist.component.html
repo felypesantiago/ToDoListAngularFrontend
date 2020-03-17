@@ -1,0 +1,8 @@
+<ul class="list-group todolist" *ngIf='listItems'>
+    <li *ngFor='let item of listItems.items' class="list-group-item text-center">
+        <a [routerLink]="['/items', item.id]">{{item.title}}</a>
+        <button type="button" class="delete-button btn btn-default" aria-label="Delete item" (click)="delete(item)">
+            <span class="icon fa fa-times" aria-hidden="true"></span>
+        </button>
+    </li>
+</ul>

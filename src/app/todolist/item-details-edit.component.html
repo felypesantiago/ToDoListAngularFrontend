@@ -1,0 +1,56 @@
+<div class="card">
+
+    <div class="card-header">{{pageTitle}}</div>
+
+    <div class="card-body">
+
+        <form novalidate (ngSubmit)="saveItem()" [formGroup]="itemForm">
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="itemTitleId">Title</label>
+                <div col="col-md-8">
+                    <input class="form-control"
+                        id="itemTitleId"
+                        type="text"
+                        placeholder="Title (required)"
+                        formControlName="title"
+                        [ngClass]="{'is-invalid': displayMessage.title }" />
+                    <span class="invalid-feedback"> {{displayMessage.title}}</span>
+                </div>
+            </div>
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="itemDescriptionId">Description</label>
+                <div col="col-md-8">
+                    <input class="form-control"
+                        id="itemDescriptionId"
+                        type="text"
+                        placeholder="Description"
+                        formControlName="description" />
+                </div>
+            </div>
+
+            <div class="form-group row mb-2">
+                <div class="offset-md-2 col-md-4">
+                  <button class="btn btn-primary mr-3"
+                          style="width:80px;"
+                          type="submit"
+                          [title]="itemForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'"
+                          [disabled]="!itemForm.valid">
+                    Save
+                  </button>
+                  <button class="btn btn-outline-secondary mr-3"
+                          style="width:80px;"
+                          type="button"
+                          title="Cancel your edits"
+                          [routerLink]="['/items']">
+                    Cancel
+                  </button>
+                </div>
+              </div>
+
+        </form>
+    </div>
+
+    <div class="alert alert-danger"
+        *ngIf="errorMessage">{{errorMessage}}
+    </div>
+</div>
